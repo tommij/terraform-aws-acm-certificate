@@ -1,7 +1,13 @@
 resource "aws_acm_certificate" "certificate" {
   domain_name       = "${var.domain_name}"
   validation_method = "${var.validation_method}"
-  tags              = "${var.tags}"
+
+  tags = {
+    Name          = "${var.certificate_name}"
+    ProductDomain = "${var.product_domain}"
+    Environment   = "${var.environment}"
+    Description   = "${var.description}"
+  }
 }
 
 resource "aws_route53_record" "cert_validation" {

@@ -1,10 +1,21 @@
-variable "domain_name" {
-  description = "domain name for certificate should be issued"
+variable "certificate_name" {
+  description = "name of the ACM certificate"
 }
 
-variable "tags" {
-  description = "tag for acm certificate"
-  type        = "map"
+variable "product_domain" {
+  description = "abbreviation of the product domain this ACM certificate belongs to"
+}
+
+variable "environment" {
+  description = "environment this ACM certificate belongs to"
+}
+
+variable "description" {
+  description = "free form description of this ACM certificate"
+}
+
+variable "domain_name" {
+  description = "domain name for certificate should be issued"
 }
 
 variable "validation_method" {
