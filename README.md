@@ -8,7 +8,7 @@ This module create interconnected resources:
 
 ## Usage ##
 
-* ### dns_validation ###
+### dns_validation ###
 ```hcl
 module "acm_certificate"{
   source              = "https://github.com/traveloka/terraform-aws-acm-certificate"
@@ -23,7 +23,7 @@ module "acm_certificate"{
 }
 ```
 
-* ### email_validation ###
+### email_validation ###
 ```hcl
   source              = "https://github.com/traveloka/terraform-aws-acm-certificate"
   domain_name         = "*.example.stg.tvlk.cloud"
