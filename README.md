@@ -13,12 +13,12 @@ This module create interconnected resources:
 module "acm_certificate"{
   source              = "https://github.com/traveloka/terraform-aws-acm-certificate"
   domain_name         = "*.example.stg.tvlk.cloud"
-  hosted_zone_name    = "stg.tvlk.cloud"
-  hosted_zone_private = "false"
+  hosted_zone_name    = "example.stg.tvlk.cloud"
+  is_hosted_zone_private = "false"
   validation_method   = "DNS"
-  certificate_name    = "example.stg.tvlk.cloud"
+  certificate_name    = "wildcard.example.stg.tvlk.cloud"
   environment         = "staging"
-  description         = "wildcard certificate for example.stg.tvlk.cloud"
+  description         = "Wildcard certificate for example.stg.tvlk.cloud"
   product_domain      = "exm"
 }
 ```
@@ -27,12 +27,12 @@ module "acm_certificate"{
 ```hcl
   source              = "https://github.com/traveloka/terraform-aws-acm-certificate"
   domain_name         = "*.example.stg.tvlk.cloud"
-  hosted_zone_name    = "stg.tvlk.cloud"
-  hosted_zone_private = "true"
+  hosted_zone_name    = "example.stg.tvlk.cloud"
+  is_hosted_zone_private = "true"
   validation_method   = "EMAIL"
-  certificate_name    = "example.stg.tvlk.cloud"
+  certificate_name    = "wildcard.example.stg.tvlk.cloud"
   environment         = "staging"
-  description         = "wildcard certificate for example.stg.tvlk.cloud"
+  description         = "Wildcard certificate for example.stg.tvlk.cloud"
   product_domain      = "exm"
   
 ```
