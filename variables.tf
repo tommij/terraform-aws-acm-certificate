@@ -1,31 +1,31 @@
 variable "certificate_name" {
-  description = "name of the ACM certificate"
+  description = "Name of the ACM certificate."
 }
 
 variable "product_domain" {
-  description = "abbreviation of the product domain this ACM certificate belongs to"
+  description = "Abbreviation of the product domain this ACM certificate belongs to."
 }
 
 variable "environment" {
-  description = "environment this ACM certificate belongs to"
+  description = "Environment this ACM certificate belongs to."
 }
 
 variable "description" {
-  description = "free form description of this ACM certificate"
+  description = "Free form description of this ACM certificate."
 }
 
 variable "domain_name" {
-  description = "domain name for certificate should be issued"
+  description = "Domain name the certificate is issued for."
 }
 
 variable "validation_method" {
-  description = "define acm certificate validation method using dns or or email"
+  description = "Certificate validation method. Possible values: DNS, EMAIL."
 }
 
 variable "hosted_zone_name" {
-  description = "domain name of hosted zone"
+  description = "Need for DNS validation, hosted zone name where record validation will be stored."
 }
 
-variable "hosted_zone_private" {
-  description = "define whether a hoted zone is private or public, true for private. false for public"
+variable "is_hosted_zone_private" {
+  description = "Define whether a hosted zone is private or public. Certificate validation using DNS only works for public hosted zone."
 }
