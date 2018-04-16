@@ -5,5 +5,5 @@ output "acm_certificate_arn" {
 
 output "acm_certificate_dns_validation_record" {
   description = "record which is used to validate acm certificate"
-  value       = "${element(concat(aws_route53_record.this.name,list("")),0)}"
+  value       = "${element(concat(aws_route53_record.this.*.name, list("")), 0)}"
 }
