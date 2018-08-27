@@ -1,6 +1,6 @@
 output "acm_certificate_arn" {
   description = "arn of acm certificate"
-  value       = "${aws_acm_certificate.this.arn}"
+  value       = "${var.validation_method == "DNS" ? aws_acm_certificate_validation.dns_validation.*.certificate_arn[0] : aws_acm_certificate.this.arn}"
 }
 
 output "acm_certificate_dns_validation_record" {
