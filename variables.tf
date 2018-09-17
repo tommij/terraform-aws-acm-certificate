@@ -26,6 +26,7 @@ variable "domain_name" {
 variable "validation_method" {
   description = "Certificate validation method. Possible values: DNS, EMAIL."
   type        = "string"
+  default     = "DNS"
 }
 
 variable "hosted_zone_name" {
@@ -36,4 +37,5 @@ variable "hosted_zone_name" {
 variable "is_hosted_zone_private" {
   description = "Define whether a hosted zone is private or public. Certificate validation using DNS only works for public hosted zone."
   type        = "string"
+  default     = false
 }
