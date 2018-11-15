@@ -1,6 +1,6 @@
 # terraform-aws-acm-certificate #
 
-Terraform module to create acm certificate, and validate acm certificate
+Terraform module to create acm certificate, and validate acm certificate using DNS validation method
 
 This module create interconnected resources:
 * [AWS ACM Certificate](https://www.terraform.io/docs/providers/aws/r/acm_certificate.html)

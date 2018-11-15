@@ -1,6 +1,6 @@
 resource "aws_acm_certificate" "this" {
   domain_name       = "${var.domain_name}"
-  validation_method = "${local.validation_method}"
+  validation_method = "DNS"
 
   tags = {
     Name          = "${var.certificate_name}"
