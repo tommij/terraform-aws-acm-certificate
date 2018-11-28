@@ -22,8 +22,7 @@ module "wildcard_certificate" {
 ```
 
 ## Examples ##
-Please see examples dir for examples on how to use this module:
-* [Examples](https://github.com/traveloka/terraform-aws-acm-certificate/tree/master/examples)
+Please see [examples](https://github.com/traveloka/terraform-aws-acm-certificate/tree/master/examples) directory for examples on how to use this module.
 
 ## Authors ##
 Module managed by [BernardSiahaan](https://github.com/siahaanbernard/)
