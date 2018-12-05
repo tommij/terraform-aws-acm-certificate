@@ -1,31 +1,28 @@
 # terraform-aws-acm-certificate #
 
-Terraform module to create acm certificate, and validate acm certificate using DNS validation method
+This Terraform module creates TLS/SSL certificate in Amazon Certificate Manager (ACM), and validates it with DNS by creating required Route 53 validation record in the given Route 53 hosted zone.
 
-This module create interconnected resources:
-* [AWS ACM Certificate](https://www.terraform.io/docs/providers/aws/r/acm_certificate.html)
-* [AWS ACM Certificate Validation](https://www.terraform.io/docs/providers/aws/r/acm_certificate_validation.html)
+This module creates the following resources:
+* [aws_acm_certificate](https://www.terraform.io/docs/providers/aws/r/acm_certificate.html)
+* [aws_route53_record](https://www.terraform.io/docs/providers/aws/r/route53_record.html)
+* [aws_acm_certificate_validation](https://www.terraform.io/docs/providers/aws/r/acm_certificate_validation.html)
 
 ## Usage ##
 
-### dns_validation ###
 ```hcl
-module "acm_certificate"{
-  source              = "https://github.com/traveloka/terraform-aws-acm-certificate"
-  domain_name         = "*.example.stg.tvlk.cloud"
-  hosted_zone_name    = "example.stg.tvlk.cloud"
-  is_hosted_zone_private = "false"
-  validation_method   = "DNS"
-  certificate_name    = "wildcard.example.stg.tvlk.cloud"
-  environment         = "staging"
-  description         = "Wildcard certificate for example.stg.tvlk.cloud"
-  product_domain      = "exm"
+module "wildcard_certificate" {
+  source              = "https://github.com/traveloka/terraform-aws-acm-certificate?ref=vX.Y.Z"
+  domain_name         = "*.pda.example.com"
+  hosted_zone_name    = "pda.example.com"
+  certificate_name    = "wildcard.pda.example.com"
+  environment         = "production"
+  description         = "Wildcard certificate for pda.example.com"
+  product_domain      = "pda"
 }
 ```
 
 ## Examples ##
-Please see file on examples dir for example on how to use this module:
-* [DNS Validation](https://github.com/traveloka/terraform-aws-acm-certificate/tree/master/examples/dns_validation)
+Please see [examples](https://github.com/traveloka/terraform-aws-acm-certificate/tree/master/examples) directory for examples on how to use this module.
 
 ## Authors ##
 Module managed by [BernardSiahaan](https://github.com/siahaanbernard/)
