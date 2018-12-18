@@ -23,17 +23,21 @@ variable "domain_name" {
   type        = "string"
 }
 
-variable "validation_method" {
-  description = "Certificate validation method. Possible values: DNS, EMAIL."
-  type        = "string"
-}
-
 variable "hosted_zone_name" {
   description = "Need for DNS validation, hosted zone name where record validation will be stored."
   type        = "string"
 }
 
-variable "is_hosted_zone_private" {
-  description = "Define whether a hosted zone is private or public. Certificate validation using DNS only works for public hosted zone."
-  type        = "string"
+variable "additional_domains" {
+  type    = "map"
+  default {
+  }
 }
+
+variable "san_map" {
+  description = "Subject Alternative Names in map{ hostname:dns-zone-name }  format"
+  type    = "map"
+  default {
+  }
+}
+
