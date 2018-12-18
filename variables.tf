@@ -27,3 +27,17 @@ variable "hosted_zone_name" {
   description = "Need for DNS validation, hosted zone name where record validation will be stored."
   type        = "string"
 }
+
+variable "additional_domains" {
+  type    = "map"
+  default {
+  }
+}
+
+variable "san_map" {
+  description = "Subject Alternative Names in map{ hostname:dns-zone-name }  format"
+  type    = "map"
+  default {
+  }
+}
+
