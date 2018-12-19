@@ -28,11 +28,6 @@ variable "hosted_zone_name" {
   type        = "string"
 }
 
-variable "additional_domains" {
-  type    = "map"
-  default = {}
-}
-
 variable "san_map" {
   description = "Subject Alternative Names in map{ hostname:dns-zone-name }  format"
   type        = "map"
